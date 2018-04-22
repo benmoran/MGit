@@ -124,10 +124,10 @@ public class MergeAction extends RepoAction {
                 switch (commitType) {
                     case Repo.COMMIT_TYPE_HEAD:
                         holder.commitIcon
-                                .setImageResource(Profile.getStyledResource(getContext(), R.drawable.ic_branch_l));
+                                .setImageResource(Profile.getStyledResource(getContext(), R.drawable.ic_branch_d));
                         break;
                     case Repo.COMMIT_TYPE_TAG:
-                        holder.commitIcon.setImageResource(Profile.getStyledResource(getContext(), R.drawable.ic_tag_l));
+                        holder.commitIcon.setImageResource(Profile.getStyledResource(getContext(), R.drawable.ic_tag_d));
                         break;
                 }
                 holder.commitTitle.setText(displayName);

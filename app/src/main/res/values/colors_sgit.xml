@@ -21,6 +21,11 @@
     <color name="pressed_sgit">#CC33B5E5</color>
     <color name="branch_name_text">#FFF</color>
     <color name="branch_name_bg">#02a1d6</color>
+    <color name="pager_title_strip_background">#02a1d6</color>
+    <color name="dark_pager_title_strip_background">@android:color/black</color>
+    <color name="drawer_text_color">#333</color>
+    <color name='drawer_background'>#eee</color>
+    <color name="bt_branch_name_bg">@android:color/black</color>
     <color name="branch_name_bg_pressed">#33b5e5</color>
 
     <color name="general_gray_text_color">#999</color>
