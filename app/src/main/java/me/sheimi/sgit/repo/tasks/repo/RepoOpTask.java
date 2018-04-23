@@ -22,6 +22,11 @@ public abstract class RepoOpTask extends SheimiAsyncTask<Void, String, Boolean> 
         mIsTaskAdded = repo.addTask(this);
     }
 
+    public boolean retryAddTask() {
+        mIsTaskAdded = mRepo.addTask(this);
+        return mIsTaskAdded;
+    }
+
     protected void onPostExecute(Boolean isSuccess) {
         super.onPostExecute(isSuccess);
         mRepo.removeTask(this);
