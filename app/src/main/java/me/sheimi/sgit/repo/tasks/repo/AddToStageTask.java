@@ -5,15 +5,19 @@ import me.sheimi.sgit.database.models.Repo;
 import me.sheimi.sgit.exception.StopTaskException;
 
 public class AddToStageTask extends RepoOpTask {
-
+    private AsyncTaskPostCallback mCallback;
     public String mFilePattern;
 
-    public AddToStageTask(Repo repo, String filepattern) {
+    public AddToStageTask(Repo repo, String filepattern, AsyncTaskPostCallback callback) {
         super(repo);
         mFilePattern = filepattern;
+        mCallback = callback;
         setSuccessMsg(R.string.success_add_to_stage);
     }
 
+    public AddToStageTask(Repo repo, String filepattern) {
+        this(repo, filepattern, null);
+    }
     @Override
     protected Boolean doInBackground(Void... params) {
         return addToStage();
@@ -21,6 +25,9 @@ public class AddToStageTask extends RepoOpTask {
 
     protected void onPostExecute(Boolean isSuccess) {
         super.onPostExecute(isSuccess);
+        if (mCallback != null) {
+            mCallback.onPostExecute(isSuccess);
+        }
     }
 
     public boolean addToStage() {
