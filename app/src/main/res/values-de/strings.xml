@@ -175,4 +175,5 @@
     <string name="clone_with_mgit">Mit MGit klonen</string>
     <string name="invalid_url">Ungültige URL!</string>
     <string name="repository_already_present">Repository existiert bereits!</string>
+    <string name="title_activity_sync">Sync</string>
 </resources>

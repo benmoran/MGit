@@ -161,4 +161,5 @@
   <string name="action_import_private_key">Import Key</string>
   <string name="action_add_private_key">Add Private Key</string>
   <string name="pref_category_title_git_profile">פרופיל git</string>
+    <string name="title_activity_sync">סינכרון</string>
 </resources>

@@ -173,5 +173,6 @@
     <string name="dialog_push_is_force_push">Forcer pousser?</string>
     <string name="error_rename_repo_fail">Renommer repository échoué</string>
     <string name="success_remove_file">Fichier a été supprimé</string>
+    <string name="title_activity_sync">Sync</string>
 
 </resources>
