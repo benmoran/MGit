@@ -115,7 +115,14 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".activities.UserSettingsActivity" />
         </activity>
-
+        <activity android:label="@string/title_activity_sync" android:name="me.sheimi.sgit.activities.SyncActivity" android:parentActivityName="me.sheimi.sgit.RepoListActivity">
+            <meta-data android:name="android.support.PARENT_ACTIVITY" android:value=".RepoListActivity"/>
+            <intent-filter android:label="Sync with MGit">
+                <category android:name="android.intent.category.DEFAULT"/>
+                <action android:name="android.intent.action.SYNC"/>
+                <data android:scheme="file"/>
+            </intent-filter>
+        </activity>
     </application>
 
 </manifest>
