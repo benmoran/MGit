@@ -3,7 +3,7 @@ ext.versions = [
         name                    : '1.0',
 
         minSdk                  : 16,
-        targetSdk               : 27,
+        targetSdk               : 23,
         compileSdk              : 27,
         buildTools              : '27.0.3',
 
