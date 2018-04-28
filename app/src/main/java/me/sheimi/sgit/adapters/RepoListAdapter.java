@@ -16,6 +16,7 @@ import me.sheimi.sgit.database.RepoContract;
 import me.sheimi.sgit.database.RepoDbManager;
 import me.sheimi.sgit.database.models.Repo;
 
+import android.content.ActivityNotFoundException;
 import android.content.ComponentName;
 import android.content.Context;
 import android.content.DialogInterface;
@@ -70,6 +71,16 @@ public class RepoListAdapter extends ArrayAdapter<Repo> implements
         mQueryType = QUERY_TYPE_QUERY;
         requery();
     }
+
+    public void doSync(SheimiFragmentActivity context, Repo repo) {
+        Intent intent = new Intent(Intent.ACTION_SYNC);
+        intent.setData(Uri.fromFile(repo.getDir()));
+        try {
+            context.startActivity(intent);
+        } catch (ActivityNotFoundException e) {
+        }
+    }
+
 
     private void requery() {
         Cursor cursor = null;
@@ -197,6 +208,13 @@ public class RepoListAdapter extends ArrayAdapter<Repo> implements
                     showRemoveRepoDialog(context, repo);
                 }
             },
+            new SheimiFragmentActivity.onOptionDialogClicked() {
+                @Override
+                public void onClicked() {
+                    doSync(context, repo);
+                }
+            },
+
             null
         };
 
