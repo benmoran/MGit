@@ -4,6 +4,9 @@ apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-kapt'
 
 android {
+    compileSdkVersion versions.compileSdk
+    buildToolsVersion versions.buildTools
+
     compileSdkVersion 27
     buildToolsVersion '27.0.3'
 
